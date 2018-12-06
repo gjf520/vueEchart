@@ -23,7 +23,6 @@ export default {
               option: {},
               chart: {},
               element: {},
-
           },
         }
     },

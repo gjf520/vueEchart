@@ -1,7 +1,8 @@
 // Template version: 1.3.1
 // see http://vuejs-templates.github.io/webpack for documentation.
 
-const path = require('path')
+const path = require('path');
+// export const MapKey = '639d2844648f4703b183272e1e66f46c';
 
 module.exports = {
   dev: {

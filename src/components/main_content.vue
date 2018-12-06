@@ -1,25 +1,79 @@
 <template>
   <div class="hello">
-    <div v-for='(item,index) in data' :key='index'>
+    <gradientLine></gradientLine>
+    <moreBar></moreBar>
+    <!-- <div v-for='(item,index) in data' :key='index'>
         <Columnar :list="item"></Columnar>
-    </div>
+    </div> -->
+     <!-- <pie :list="pie_data"></pie>
+     <zhexian :list='company'></zhexian>
+     <pieRisk :list="pie_data"></pieRisk>
+     <noticeColumnar></noticeColumnar>
+     <div class='prcentBar'>
+       <div class='progress' v-for='(item,index) in companyname' :key='index'>
+         <progressImg  :stepValue="0.1" :initValue="1" :stopValue='item.percent' :name='item.name'></progressImg>
+       </div>
+     </div>-->
+     <bar :list='company'></bar>
 
-    <pie :list="pie_data"></pie>
-    <TransverseColumnar :list="transverse_data"></TransverseColumnar>
+
+
+    <!-- <TransverseColumnar :list="transverse_data"></TransverseColumnar>  -->
+
     <!-- <maps></maps> -->
+    <!-- <pieColor></pieColor> -->
+
+    <!--  -->
   </div>
 </template>
 
 <script>
 import EChart from 'echarts';
-import Columnar from './columnar.vue';
-import  Pie from './pie.vue';
-import  TransverseColumnar from './transverse_columnar.vue';
+// import Columnar from './columnar.vue';
+import gradientLine from './gradient_line_chart';
+// import  Pie from './pie.vue';
+import  bar from './bar.vue';
+import moreBar from './more_bar.vue'
+// import  TransverseColumnar from './transverse_columnar.vue';
 // import  maps from './map.vue';
+// import  zhexian from './zhexian.vue';
+// import  pieRisk from './pie_risk.vue';
+// import  noticeColumnar from './notice_columnar.vue';
+// import  progressImg from './progress.vue';
+
+
+
+
 export default {
   name: 'mainContent',
     data () {
         return {
+          // companyname:['召陵人民医院', '召陵人民医院', '新城区人民医院', '新城区中医院', '民政康复医院'],
+          companyname:[
+            {
+              name:'召陵人民医院',
+              percent:40
+            },{
+              name:'召陵人民医院',
+              percent:50
+            },{
+              name:'新城区人民医院',
+              percent:66
+            },{
+              name:'新城区中医院',
+              percent:33
+            },{
+              name:'民政康复医院',
+              percent:77
+            }
+          ],
+
+          company:{
+            xData:['单层','多层','高层','地下','是有化工企业'],
+            yData:['1','3','4','2','4'],
+            series_item_style:['#BC35F1','#FF4754'],
+            yAxis_max:5
+          },
           data:{
             company:{
               xData:['感烟火灾探测器','感温火灾探测器','可燃气体探测器','手动火灾报警器','无线水压表','摄像头','用户信息传输设置'],
@@ -42,11 +96,11 @@ export default {
             },
           },
           pie_data:{
-            legend_data:['九小场所','服装、制鞋等生产加工企业','商场、宾馆、公共娱乐场所','化工仓储企业','高层公共建筑'],
+            legend_data:['住宅','人员密集场所','交通工具','垃圾及废弃物','农副业场所','物资仓储场所','其他'],
             series_data:[
-                {value:335, name:'九小场所'},
-                {value:310, name:'服装、制鞋等生产加工企业'},
-                {value:1548, name:'商场、宾馆、公共娱乐场所'},
+                {value:335, name:'住宅'},
+                {value:310, name:'人员密集场所'},
+                {value:1548, name:'交通工具'},
                 {value:135, name:'化工仓储企业'},
                 {value:400, name:'高层公共建筑'}
             ]
@@ -60,10 +114,17 @@ export default {
         }
     },
     components: {
-      Columnar,
-      Pie,
-      TransverseColumnar,
-      // maps
+      // Columnar,
+      gradientLine,
+      moreBar,
+      // Pie,
+      bar,
+      // TransverseColumnar,
+      // maps,
+      // zhexian,
+      // pieRisk,
+      // noticeColumnar,
+      // progressImg
     },
     mounted() {
 
@@ -102,4 +163,24 @@ a {
     height:300px;
     background-color: red;
 }
+.prcentBar{
+  margin-right: 1700px;
+}
+.progress{
+  position: relative;
+  width: 350px;
+  height: 10px;
+  left: 70%;
+  top: 40%;
+  margin-bottom: 30px;
+  border:1px solid #263747;
+  background-color: rgba(87,88,88,0.4);
+}
+.title{
+  color: white;
+  font-size: 16px;
+
+}
+
+
 </style>
