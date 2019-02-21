@@ -136,19 +136,19 @@ export default {
                            width: 1
                        }
                    },
-                   areaStyle: {
-                       normal: {
-                           color: new EChart.graphic.LinearGradient(0, 0, 0, 1, [{
-                               offset: 0,
-                               color: '#b833e8'
-                           }, {
-                               offset: 0.8,
-                               color: '#62298c'
-                           }], false),
-                           shadowColor: 'rgba(0, 0, 0, 0.1)',
-                           shadowBlur: 10
-                       }
-                   },
+                   // areaStyle: {
+                   //     normal: {
+                   //         color: new EChart.graphic.LinearGradient(0, 0, 0, 1, [{
+                   //             offset: 0,
+                   //             color: '#b833e8'
+                   //         }, {
+                   //             offset: 0.8,
+                   //             color: '#62298c'
+                   //         }], false),
+                   //         shadowColor: 'rgba(0, 0, 0, 0.1)',
+                   //         shadowBlur: 10
+                   //     }
+                   // },
                    itemStyle: {
                        normal: {
                            color: 'rgb(80,37,211)',

@@ -59,6 +59,7 @@ export default {
                   xAxis: [
                       {
                           show: false,
+                          inverse:true,
                       },
                       //由于下边X轴已经是百分比刻度了,所以需要在顶部加一个X轴,刻度是金额,也隐藏掉
                       {
@@ -88,10 +89,10 @@ export default {
                           show: true,
                           type: 'bar',
                           barGap: '-100%',
-                          barWidth: '35%', //统计条宽度
+                          barWidth: '20%', //统计条宽度
                           itemStyle: {
                               normal: {
-                                barBorderRadius: false,
+                                barBorderRadius: 20,
                                 color: 'rgba(102, 102, 102,0.5)'
                               },
                           },
@@ -103,37 +104,14 @@ export default {
                           show: true,
                           type: 'bar',
                           barGap: '-100%',
-                          barWidth: '35%', //统计条宽度
+                          barWidth: '20%', //统计条宽度
                           itemStyle: {
                               normal: {
-                                  color: {
-                                      type: 'bar',
-                                      colorStops: [{
-                                          offset: 0,
-                                          color: '#122a40' // 0% 处的颜色
-                                      }, {
-                                          offset: 1,
-                                          color: '#0292f4' // 100% 处的颜色
-                                      }],
-                                      globalCoord: false, // 缺省为 false
-
-                                  }
+                                  barBorderRadius: 20, //统计条弧度
+                                  color: '#0087F2'
                               },
                           },
                           max: 1,
-                          // label: {
-                          //     normal: {
-                          //         show: true,
-                          //         textStyle: {
-                          //             color: '#fff', //百分比颜色
-                          //         },
-                          //         position: 'inside',
-                          //         //百分比格式
-                          //         formatter: function(data) {
-                          //             return (baifenbi[data.dataIndex] * 100).toFixed(1) + '%';
-                          //         },
-                          //     }
-                          // },
                           labelLine: {
                               show: true,
                           },

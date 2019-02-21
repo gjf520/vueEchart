@@ -67,12 +67,12 @@
             // }
           },
           legend: {
-            align: 'right',
+            align: 'left',
             right: '10%',
             textStyle: {
               color: 'rgba(255,255,255,0.7)'
             },
-            data: ['高风险', '中风险', '低风险']
+            data: ['水压', '风压', '防火门','离位']
           },
           // toolbox: {
           //     show: true,
@@ -99,7 +99,7 @@
             {
               type: 'category',
               // data: vue.list.name,
-              data: ['教育行业', '医疗行业', '古建行业'],
+              data: ['mon', 'tue', 'wed','thu','fri','sat','sun'],
               name: '(个)',
               nameLocation: 'start',
               nameTextStyle: {
@@ -134,78 +134,62 @@
           ],
           series: [
             {
-              name: '高风险',
+              name: '水压',
               type: 'bar',
               zlevel: 1,
-              barWidth: 10,
+              // barWidth: 10,
               itemStyle: {
                 normal: {
-                  color: new EChart.graphic.LinearGradient(1, 1, 0, 0, [{ //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
-
-                    offset: 0,
-                    color: 'rgba(244,69,81,0.1)'
-                  }, {
-                    offset: 0.6,
-                    color: 'rgba(244,69,81,0.5)'
-                  }, {
-                    offset: 1,
-                    color: 'rgba(244,69,81,1)'
-                  }])
+                  color: 'blue'
                 },
                 opacity: 0.5
               },
               // data: vue.list.high
-              data: [4804.7,1444.3,1332.1]
+              data: [7,6,8,6,2,4,6]
             },
             {
-              name: '中风险',
+              name:  '风压',
               type: 'bar',
               zlevel: 1,
-              barWidth: 10,
+              // barWidth: 10,
               itemStyle: {
                 normal: {
-                  color: new EChart.graphic.LinearGradient(1, 1, 0, 0, [{ //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
-
-                    offset: 0,
-                    color: 'rgba(242,169,2,0.1)'
-                  }, {
-                    offset: 0.6,
-                    color: 'rgba(242,169,2,0.5)'
-                  }, {
-                    offset: 1,
-                    color: 'rgba(242,169,2,1)'
-                  }])
+                  color: 'green'
                 },
                 opacity: 0.5
               },
               // itemStyle: itemStyle,
               // data: vue.list.center
-              data: [5506.3,1674.7,1405]
+              data: [7,4,8,7,1,4,6]
             },
             {
-              name: '低风险',
+              name: '防火门',
               type: 'bar',
               zlevel: 1,
-              barWidth: 10,
+              // barWidth: 10,
               itemStyle: {
                 normal: {
-                  color: new EChart.graphic.LinearGradient(1, 1, 0, 0, [{ //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
-
-                    offset: 0,
-                    color: 'rgba(19,221,191,0.1)'
-                  }, {
-                    offset: 0.6,
-                    color: 'rgba(19,221,191,0.5)'
-                  }, {
-                    offset: 1,
-                    color: 'rgba(19,221,191,1)'
-                  }])
+                  color: 'red'
                 },
                 opacity: 0.5
               },
               // itemStyle: itemStyle,
               // data: vue.list.low
-              data: [6040.9,1823.4,1484.3]
+              data: [7,6,2,6,5,4,6]
+            },{
+              name: '离位',
+              type: 'bar',
+              zlevel: 1,
+              // barWidth: 10,
+              itemStyle: {
+                normal: {
+                  color: 'skyblue'
+                },
+                opacity: 0.5
+              },
+              // itemStyle: itemStyle,
+              // data: vue.list.low
+              data: [3,6,2,6,2,7,6]
             },
           ]
         };

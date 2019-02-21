@@ -2,10 +2,11 @@
   <div class="hello">
     <gradientLine></gradientLine>
     <moreBar></moreBar>
-    <!-- <div v-for='(item,index) in data' :key='index'>
+    <pieRisk :list="pie_data"></pieRisk>
+     <div v-for='(item,index) in data' :key='index'>
         <Columnar :list="item"></Columnar>
-    </div> -->
-     <!-- <pie :list="pie_data"></pie>
+    </div>
+      <pie :list="pie_data"></pie>
      <zhexian :list='company'></zhexian>
      <pieRisk :list="pie_data"></pieRisk>
      <noticeColumnar></noticeColumnar>
@@ -13,15 +14,15 @@
        <div class='progress' v-for='(item,index) in companyname' :key='index'>
          <progressImg  :stepValue="0.1" :initValue="1" :stopValue='item.percent' :name='item.name'></progressImg>
        </div>
-     </div>-->
+     </div>
      <bar :list='company'></bar>
 
 
 
-    <!-- <TransverseColumnar :list="transverse_data"></TransverseColumnar>  -->
+    <TransverseColumnar :list="transverse_data"></TransverseColumnar>
 
-    <!-- <maps></maps> -->
-    <!-- <pieColor></pieColor> -->
+    <maps></maps>
+    <pieColor></pieColor>
 
     <!--  -->
   </div>
@@ -29,17 +30,17 @@
 
 <script>
 import EChart from 'echarts';
-// import Columnar from './columnar.vue';
+import Columnar from './columnar.vue';
 import gradientLine from './gradient_line_chart';
-// import  Pie from './pie.vue';
+import  Pie from './pie.vue';
 import  bar from './bar.vue';
 import moreBar from './more_bar.vue'
-// import  TransverseColumnar from './transverse_columnar.vue';
-// import  maps from './map.vue';
-// import  zhexian from './zhexian.vue';
-// import  pieRisk from './pie_risk.vue';
-// import  noticeColumnar from './notice_columnar.vue';
-// import  progressImg from './progress.vue';
+import  TransverseColumnar from './transverse_columnar.vue';
+import  maps from './map.vue';
+import  zhexian from './zhexian.vue';
+import  pieRisk from './pie_risk.vue';
+import  noticeColumnar from './notice_columnar.vue';
+import  progressImg from './progress.vue';
 
 
 
@@ -48,7 +49,7 @@ export default {
   name: 'mainContent',
     data () {
         return {
-          // companyname:['召陵人民医院', '召陵人民医院', '新城区人民医院', '新城区中医院', '民政康复医院'],
+          companyname:['召陵人民医院', '召陵人民医院', '新城区人民医院', '新城区中医院', '民政康复医院'],
           companyname:[
             {
               name:'召陵人民医院',
@@ -114,17 +115,17 @@ export default {
         }
     },
     components: {
-      // Columnar,
+      Columnar,
       gradientLine,
       moreBar,
-      // Pie,
+      Pie,
       bar,
-      // TransverseColumnar,
-      // maps,
-      // zhexian,
-      // pieRisk,
-      // noticeColumnar,
-      // progressImg
+      TransverseColumnar,
+      maps,
+      zhexian,
+      pieRisk,
+      noticeColumnar,
+      progressImg
     },
     mounted() {
 

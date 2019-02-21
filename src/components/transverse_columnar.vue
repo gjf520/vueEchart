@@ -70,6 +70,7 @@ export default {
                    xAxis: {
                        type: 'value',
                        // max: this.list.xAxis_max,
+                       //
                        axisLabel: {
                           color: "#fff",
 
